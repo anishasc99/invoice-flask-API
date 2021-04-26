@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <h1>Invoice parsing API</h1>
+  </head>
+  <body>
+    <form action="" method="post" novalidate>
+      {{ form.hidden_tag() }}
+      {{ form.csrf_token }}
+      <p>Upload your invoice: 
+        {{form.invoice_file}}
+      </p>
+      <p>Choose your algorithm: <br>
+      {% for subfield in form.algorithm %}
+          <tr>
+              <td>{{ subfield }}</td>
+              <td>{{ subfield.label }}</td>
+          </tr>
+      {% endfor %}
+      </p>
+      <p>{{ form.submit(style="list-style:none") }}</p>
+    </form>
+  </body>
+
+</html>
