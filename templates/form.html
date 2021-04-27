@@ -3,7 +3,7 @@
     <h1>Invoice parsing API</h1>
   </head>
   <body>
-    <form action="" method="post" novalidate>
+    <form action="" method="post" novalidate enctype='multipart/form-data'>
       {{ form.csrf_token }}
       {{ form.hidden_tag() }}
       <p>Upload your invoice: 
