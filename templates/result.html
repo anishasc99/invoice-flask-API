@@ -4,11 +4,21 @@
   </head>
   <body>
     <p>
-      Bounding boxes
-      <img src="{{ result_img }}" alt="Result image",width="608" height="608">
-    </p>
-    <p>
-      Entities found after OCR:
+      Bounding boxes<br>
+      <img src="{{ result_img }}" alt="Result image",width="416" height="416">
+      Entities found after OCR: <br>
+      <table>
+      {% for key, value in entities.items() %}
+      <tr>
+        <td>
+          {{ key }}
+        </td>
+        <td>
+          {{ value }}
+        </td>
+      </tr>
+      {% endfor %}
+      </table>
     </p>
   </body>
 </html>
