@@ -9,13 +9,21 @@
       <p>Upload your invoice: 
         {{form.invoice_file}}
       </p>
+      <br>
       <p>Choose your algorithm: <br>
-      {% for subfield in form.algorithm %}
+      <!--{% for subfield in form.algorithm %}
           <tr>
               <td>{{ subfield }}</td>
               <td>{{ subfield.label }}</td>
           </tr>
-      {% endfor %}
+      {% endfor %}-->
+      </p>
+      <p>
+        <select name= algos method="GET" action="/">
+            {% for algo in algos %}
+            <option value= "{{algo}}" SELECTED>{{algo}}</option>"
+            {% endfor %}
+        </select>
       </p>
       <p>{{ form.submit() }}</p>
     </form>
