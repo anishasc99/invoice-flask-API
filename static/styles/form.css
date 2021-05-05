@@ -27,6 +27,8 @@
     max-width: 500px;
     margin: auto;
     
+  align-items: center;
+    
  }
  .button {
    font-family: "Source Sans Pro";
@@ -81,4 +83,8 @@
      padding: 7px;
      font-family: "Source Sans Pro";     
   
+}
+.algorithms
+{
+  margin-left: 30%;
 }
