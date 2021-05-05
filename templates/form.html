@@ -1,16 +1,19 @@
 <html>
-  <head>
-    <h1>Invoice parsing API</h1>
-  </head>
-  <body>
-    <form action="" method="post" novalidate enctype='multipart/form-data'>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/form.css') }}">
+  <div class="header">
+    <h1 id="heading">Invoice Parser</h1>
+    <h3 id="tagline"> Parse invoices using object detection methods</h3>
+  </div>
+  <body >
+    <div class = "page">
+      <form id="form" action="" method="post" novalidate enctype='multipart/form-data'>
       {{ form.csrf_token }}
       {{ form.hidden_tag() }}
-      <p>Upload your invoice: 
-        {{form.invoice_file}}
-      </p>
-      <br>
-      <p>Choose your algorithm: <br>
+      <div class="upload-btn-wrapper">
+          <button class="btn">Upload invoice</button>
+          {{form.invoice_file}}
+      </div>
       <!--{% for subfield in form.algorithm %}
           <tr>
               <td>{{ subfield }}</td>
@@ -19,14 +22,20 @@
       {% endfor %}-->
       </p>
       <p>
-        <select name= algos method="GET" action="/">
+        <div class="custom-select1" style="width:200px;">
+        <select class ="custom-select" name= algos method="GET" action="/">
             {% for algo in algos %}
             <option value= "{{algo}}" SELECTED>{{algo}}</option>"
             {% endfor %}
         </select>
+        </div>
       </p>
-      <p>{{ form.submit() }}</p>
+      <div class="submit">
+      <p >{{ form.submit(class = "button") }}</p>
+      </div>
     </form>
+    </div>
   </body>
+  
 
 </html>
